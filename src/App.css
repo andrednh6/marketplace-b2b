@@ -40,7 +40,7 @@ header nav ul li a {
 }
 
 .hero {
-  background-image: url('/images/construction-banner.jpg');
+  background-image: url('./components/images/construction-banner.jpg');
   background-size: cover;
   background-position: center;
   color: white;
