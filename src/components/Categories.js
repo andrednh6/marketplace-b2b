@@ -1,22 +1,21 @@
 import React from 'react';
 import './Categories.css';
 
-const categories = [
-  { name: 'Cemento', imageUrl: '/images/cemento.jpg' },
-  { name: 'Ladrillos', imageUrl: '/images/ladrillos.jpg' },
-  { name: 'Acero', imageUrl: '/images/acero.jpg' },
-];
+const categories = ['Todos', 'Cemento', 'Ladrillos', 'Acero'];
 
-const Categories = () => {
+const Categories = ({ onCategorySelect }) => {
   return (
     <section className="categories">
       <h3>Categorías Principales</h3>
-      <div className="category-grid">
+      <div className="category-list">
         {categories.map((category, index) => (
-          <div key={index} className="category-item">
-            <img src={category.imageUrl} alt={category.name} />
-            <h4>{category.name}</h4>
-          </div>
+          <button
+            key={index}
+            className="category-item"
+            onClick={() => onCategorySelect(category)}  // Al hacer clic, se selecciona la categoría
+          >
+            {category}
+          </button>
         ))}
       </div>
     </section>
